@@ -1,0 +1,117 @@
+body.form-page {
+    overflow: hidden;
+}
+
+.form-page .form-container {
+    width: 90vw; /* Use viewport width */
+    max-width: 900px; /* Increased max-width for a wider layout */
+    margin: 5vh auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-page .form-container h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+}
+
+.form-page form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+    gap: 15px 25px; /* Row and column gap */
+}
+
+.form-page .form-group {
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.form-page .form-group:focus-within {
+    z-index: 2;
+}
+
+.form-page .form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #e0e0e0;
+}
+
+.form-page .form-control {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    transition: background 0.3s, border 0.3s;
+}
+
+.form-page .form-control:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #00bfff;
+    outline: none;
+}
+
+.form-page .form-control option {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+.form-page .form-control .placeholder {
+    color: #aaa;
+}
+
+.form-page .btn-primary {
+    grid-column: 1 / -1;
+    width: 100%;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(45deg, #00bfff, #ff69b4);
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    border: none;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-page .btn-primary:hover {
+    background: linear-gradient(45deg, #ff69b4, #00bfff);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.form-page .prediction-result {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 18px;
+    color: #f0e68c;
+}
+
+.form-page .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}

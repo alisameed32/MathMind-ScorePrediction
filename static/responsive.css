@@ -1,0 +1,86 @@
+
+/* Media Queries for index.html */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .btn {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+
+    .social-icons a {
+        font-size: 24px;
+        margin: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+
+    .social-icons a {
+        font-size: 22px;
+        margin: 0 10px;
+    }
+}
+
+/* Media Queries for form.html */
+@media (max-width: 768px) {
+    body.form-page {
+        overflow-y: auto !important; /* Force vertical scrolling */
+        height: auto !important; /* Ensure height is not fixed */
+    }
+
+    .form-page .form-container {
+        width: 90vw;
+        padding: 20px;
+    }
+
+    .form-page form {
+        display: grid !important; /* Force grid display */
+        grid-template-columns: 1fr !important; /* Force single column */
+    }
+
+    .form-page .form-group {
+        margin-bottom: 20px; /* Add more space between form groups */
+    }
+
+    .form-page .form-container h1 {
+        font-size: 1.8em;
+    }
+
+    .form-page .footer {
+        position: relative; /* Change to relative for scrolling */
+    }
+}
+
+@media (max-width: 480px) {
+    .form-page .form-container {
+        padding: 15px;
+    }
+
+    .form-page .form-container h1 {
+        font-size: 1.5em;
+    }
+
+    .form-page .form-control {
+        font-size: 13px;
+    }
+
+    .form-page .btn-primary {
+        font-size: 14px;
+        padding: 10px 30px;
+    }
+}

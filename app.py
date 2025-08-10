@@ -32,7 +32,7 @@ def predict_datapoint():
 
         predict_pipline = PredictPipline()
         results = predict_pipline.predict_score(pred_df)
-        logging.info("Got the prediction score")
+        logging.info("Got the Prediction Score")
         
         return render_template('form.html',result=results[0])
     

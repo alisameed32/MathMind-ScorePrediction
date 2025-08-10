@@ -1,6 +1,9 @@
-logs
-catboost_info
-mlproject.egg-info
-venv
+logs/
+catboost_info/
+mlproject.egg-info/
+venv/
 __pycache__
 *.pyc
+notebook/1 . EDA STUDENT PERFORMANCE.ipynb
+notebook/2. MODEL TRAINING.ipynb
+notebook/catboost_info/

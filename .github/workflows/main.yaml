@@ -49,9 +49,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v2
-        with:
-          mask-password: 'true'
+        uses: aws-actions/amazon-ecr-login@v1
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
@@ -81,9 +79,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v2
-        with:
-          mask-password: 'true'
+        uses: aws-actions/amazon-ecr-login@v1
       
       - name: Pull latest images
         env:
@@ -94,13 +90,7 @@ jobs:
          
       - name: Stop and remove container if running
         run: |
-         if docker ps -q --filter "name=mathmind-scoreprediction" | grep -q .; then
-           echo "Stopping existing container..."
-           docker stop mathmind-scoreprediction
-           docker rm -fv mathmind-scoreprediction
-         else
-           echo "No existing container found"
-         fi
+         docker ps -q --filter "name=mathmind-scoreprediction" | grep -q . && docker stop mathmind-scoreprediction && docker rm -fv mathmind-scoreprediction || true
        
       - name: Run Docker Image to serve users
         env:
@@ -108,27 +98,10 @@ jobs:
           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
         run: |
          docker run -d -p 8080:8080 --ipc="host" --name=mathmind-scoreprediction \
-           --restart unless-stopped \
            -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' \
            -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' \
            -e 'AWS_REGION=${{ secrets.AWS_REGION }}' \
            $ECR_REGISTRY/$ECR_REPOSITORY:latest
-           
-      - name: Verify deployment
-        run: |
-          # Wait for container to start
-          sleep 10
-          
-          # Check if container is running
-          if docker ps --filter "name=mathmind-scoreprediction" --format "{{.Names}}" | grep -q mathmind-scoreprediction; then
-            echo "✅ Container is running successfully!"
-            docker ps --filter "name=mathmind-scoreprediction"
-          else
-            echo "❌ Container failed to start!"
-            echo "Container logs:"
-            docker logs mathmind-scoreprediction || echo "No logs available"
-            exit 1
-          fi
            
       - name: Clean previous images and containers
         run: |

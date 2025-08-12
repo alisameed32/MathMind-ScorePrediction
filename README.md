@@ -3,7 +3,7 @@
 **A Full-Stack, Modular Machine Learning Application with Responsive Frontend, Docker & Cloud Deployment, CI/CD, and Public Docker Hub Distribution**
 
 ---
-🎥 **[MathMind-ScorePrediction Demo Video](.github/video/MathMind-ScorePrediction%20Demo%20Video.mp4)** 
+https://github.com/user-attachments/assets/053cc405-2da5-4114-8714-7e8df8aec7e6
 
 ---
 

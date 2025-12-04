@@ -246,7 +246,7 @@ python app.py
 
 ## 11. Conclusion
 
-This project delivers a polished, modular ML application with production-grade deployment including:
+This project delivers a polished, modular ML application with Production-grade deployment including:
 
 * Serialized preprocessing and modeling artifacts (`preprocessor.pkl`, `model.pkl`)
 * Dockerized distribution through both **AWS ECR** and **Docker Hub**

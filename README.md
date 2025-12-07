@@ -38,7 +38,7 @@ https://github.com/user-attachments/assets/053cc405-2da5-4114-8714-7e8df8aec7e6
 **MathMind-ScorePrediction** is an end-to-end, modular machine learning application that predicts student's math scores. It includes:  
 - Modular programmatic pipeline (ingestion → preprocessing → training → evaluation → prediction)  
 - Serialized artifacts: `preprocessor.pkl` and `model.pkl` for reliable deployment  
-- A responsive, mobile-friendly frontend (HTML/CSS with Gemini CLI enhancements)  
+- A responsive, mobile-friendly frontend (HTML/CSS with Gemini CLI Enhancements)  
 - Flask backend for serving predictions  
 - Dockerized deployment, available via **AWS ECR** (for production) and **Docker Hub** (for public access)  
 - Automated CI/CD with GitHub Actions
